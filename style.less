@@ -66,7 +66,6 @@ a:focus{
         white-space: nowrap;
         text-align: center;
         font-size: 15px;
-        
     }
 }
 
@@ -103,6 +102,7 @@ a:focus{
 }
 
 .dock{
+    z-index: 30;
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -134,5 +134,103 @@ a:focus{
             outline: none;
             transform: translateY(-2px);
         }
+    }
+}
+
+.windows{
+    z-index: 10;
+    position: fixed;
+    top: 30px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.finder{
+    pointer-events: auto;
+    &.opened{
+        display: grid;
+    }
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    min-width: 600px;
+    min-height: 300px;
+    max-height: calc(100vh - 125px);
+    background: rgba(255, 255, 255, 0.418);
+    border-radius: 15px;
+    grid-template-columns: 200px 1fr;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        padding: 18px;
+        
+    }
+    .main{
+        background: white;
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 125px);
+        .title{
+            padding: 15px;
+            border-bottom: 0.5px solid rgb(243, 243, 243);
+            cursor: move;
+        }
+        .content{
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            overflow-y: scroll;
+            height: 100%;
+            .folder, .file, a{
+                p{
+                    color: black;
+                }
+                &:focus{
+                    p{
+                        color: white;
+                    }
+                }
+            }
+           
+        }
+    }
+}
+
+.btn-list{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    div{
+        width: 12px;
+        height: 12px;
+        background: #DCDCDC;
+        border-radius: 100%;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        &.close{
+            background: #FF5C5F;
+            &:hover{
+                background: darken(#FF5C5F, 5%);
+            }
+        }
+        // &.max{
+        //     background: #FFBA3D;
+        //     &:hover{
+        //         background: darken(#FFBA3D, 5%);
+        //     }
+        // }
+        // &.min{
+        //     background: #28CA43;
+        //     &:hover{
+        //         background: darken(#28CA43, 5%);
+        //     }
+        // }
+        
     }
 }
