@@ -152,10 +152,14 @@ a:focus{
     &.opened{
         display: grid;
     }
+    &.focused{
+        z-index: 99;
+    }
     position: absolute;
     display: none;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     min-width: 600px;
     min-height: 300px;
     max-height: calc(100vh - 125px);
@@ -164,28 +168,28 @@ a:focus{
     grid-template-columns: 200px 1fr;
     backdrop-filter: blur(20px);
     overflow: hidden;
-    .sidebar{
+    .finder_sidebar{
         display: flex;
         flex-direction: column;
         padding: 18px;
         
     }
-    .main{
+    .finder_main{
         background: white;
         display: flex;
         flex-direction: column;
         max-height: calc(100vh - 125px);
-        .title{
+        .finder_title{
             padding: 15px;
             border-bottom: 0.5px solid rgb(243, 243, 243);
             cursor: move;
         }
-        .content{
+        .fidner_content{
             padding: 15px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            overflow-y: scroll;
+            overflow-y: auto;
             height: 100%;
             .folder, .file, a{
                 p{
@@ -213,19 +217,19 @@ a:focus{
         border-radius: 100%;
         transition: 0.3s ease-in-out;
         cursor: pointer;
-        &.close{
+        &.finder_close{
             background: #FF5C5F;
             &:hover{
                 background: darken(#FF5C5F, 5%);
             }
         }
-        // &.max{
+        // &.finder_max{
         //     background: #FFBA3D;
         //     &:hover{
         //         background: darken(#FFBA3D, 5%);
         //     }
         // }
-        // &.min{
+        // &.finder_min{
         //     background: #28CA43;
         //     &:hover{
         //         background: darken(#28CA43, 5%);

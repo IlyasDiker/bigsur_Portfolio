@@ -24,13 +24,13 @@
             </div>
         </div>
         <div class="folders-wrapper">
-            <a tabindex="0" class="stealth-link">
+            <a tabindex="0" class="stealth-link" onclick="openFinderWindow('#window-root-1')">
                 <div class="folder">
                     <img src="imgs/folder-full.png" alt="">
                     <p>Projects</p>
                 </div>
             </a>
-            <a tabindex="0" class="stealth-link">
+            <a tabindex="0" class="stealth-link" onclick="openFinderWindow('#window-root-2')">
                 <div class="folder">
                     <img src="imgs/folder.png" alt="">
                     <p>About me</p>
@@ -51,17 +51,17 @@
         </div>
 
         <div class="windows">
-            <div class="finder opened focused" id="window-1">
-                <div class="sidebar">
+            <div class="finder" id="window-root-1" data-id='1'>
+                <div class="finder_sidebar">
                     <div class="btn-list">
-                        <div class="windows-btn close" id='close-1'></div>
-                        <div class="windows-btn max" id='max-1'></div>
-                        <div class="windows-btn min" id='min-1'></div>
+                        <div class="windows-btn finder_close"></div>
+                        <div class="windows-btn finder_max"></div>
+                        <div class="windows-btn finder_min"></div>
                     </div>
                 </div>
-                <div class="main">
-                    <div class="title">FOLDER_NAME</div>
-                    <div class="content">
+                <div class="finder_main">
+                    <div class="finder_title">Projects</div>
+                    <div class="fidner_content">
                         <a tabindex="0" class="stealth-link">
                             <div class="folder">
                                 <img src="imgs/folder-full.png" alt="">
@@ -74,11 +74,26 @@
                                 <p>About me</p>
                             </div>
                         </a>
+                    </div>
+                </div>
+            </div>
+            <div class="finder" id="window-root-2" data-id='2'>
+                <div class="finder_sidebar">
+                    <div class="btn-list">
+                        <div class="windows-btn finder_close"></div>
+                        <div class="windows-btn finder_max"></div>
+                        <div class="windows-btn finder_min"></div>
+                    </div>
+                </div>
+                <div class="finder_main">
+                    <div class="finder_title">About me</div>
+                    <div class="fidner_content">
                         
                     </div>
                 </div>
             </div>
         </div>
+
 
         <div class="dock">
             <div class="app" tabindex="0" draggable="true">
