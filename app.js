@@ -19,6 +19,14 @@ function openFinderWindow(id) {  // id : Full elementId #window-root-[id]
     elmnt.classList.add('opened');
     elmnt.style = '';
 }
+function maxFinderWindow(id) {  // id : Full elementId #window-root-[id]
+    let elmnt = document.querySelector(id)
+    if(elmnt.classList.contains('maximized')) {
+        elmnt.classList.remove('maximized');
+    } else {
+        elmnt.classList.add('maximized');
+    }
+}
 
 function dragElement(elmnt, windowHeader) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -89,7 +97,7 @@ document.querySelectorAll('.finder').forEach(element => {
     element.querySelector('.finder_close').addEventListener('click', ()=>{
         closeFinderWindow('#'+elementId);
     });
+    // element.querySelector('.finder_max').addEventListener('click', ()=>{
+    //     maxFinderWindow('#'+elementId);
+    // });
 });
-
-
-document.querySelector('.windows').appendChild(finder);
