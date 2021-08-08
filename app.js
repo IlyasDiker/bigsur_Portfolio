@@ -1,6 +1,15 @@
 const windowRoot = '#window-root-';
 const windowHeader = '#window-header-';
 
+setInterval(function(){
+    let cTime = new Date().toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      });
+    document.querySelector('#time').innerHTML = cTime;
+ },200);
+
 function closeFinderWindow(id) {  // id : Full elementId #window-root-[id]
     document.querySelector(id).classList.remove('opened');
     document.querySelector(id).classList.remove('focused');
@@ -81,3 +90,6 @@ document.querySelectorAll('.finder').forEach(element => {
         closeFinderWindow('#'+elementId);
     });
 });
+
+
+document.querySelector('.windows').appendChild(finder);
