@@ -47,6 +47,7 @@ a:focus{
     flex-direction: column;
     align-items: center;
     margin: 15px;
+    pointer-events: auto;
     &:hover{
         p{
             white-space: pre-wrap;
@@ -54,6 +55,35 @@ a:focus{
     }
     img{
         width: 100px;
+    }
+    p{
+        transition: 0.3s ease-in-out;
+        color: white;
+        text-decoration: none;
+        text-shadow: 0px 0px 10px rgba(150, 150, 150, 0.25);
+        max-width: 120px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 15px;
+    }
+}
+.file{
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    pointer-events: auto;
+    &:hover{
+        p{
+            white-space: pre-wrap;
+        }
+    }
+    img{
+        height: 80px;
+        padding: 20px;
     }
     p{
         transition: 0.3s ease-in-out;
@@ -172,7 +202,6 @@ a:focus{
         display: flex;
         flex-direction: column;
         padding: 18px;
-        
     }
     .finder_main{
         background: white;

@@ -3,6 +3,7 @@ const windowHeader = '#window-header-';
 
 function closeFinderWindow(id) {  // id : Full elementId #window-root-[id]
     document.querySelector(id).classList.remove('opened');
+    document.querySelector(id).classList.remove('focused');
 }
 function openFinderWindow(id) {  // id : Full elementId #window-root-[id]
     let elmnt = document.querySelector(id)
@@ -28,8 +29,8 @@ function dragElement(elmnt, windowHeader) {
         e.preventDefault();
         let winbnd = document.querySelector('.windows').getBoundingClientRect();
         let elmbnd = elmnt.getBoundingClientRect();
-        console.log(winbnd);
-        console.log(elmbnd);
+        // console.log(winbnd);
+        // console.log(elmbnd);
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
@@ -67,14 +68,16 @@ document.querySelectorAll('.finder').forEach(element => {
     let windowID = element.dataset.id;
     let elementId = element.id;
     let windowHeader = element.querySelector('.finder_title');
-
     dragElement(element, windowHeader);
-
+    
+    element.addEventListener('click', ()=>{
+        document.querySelectorAll('.focused').forEach(el => {
+            el.classList.remove('focused');
+        });
+        element.classList.add('focused');
+    });
+    
     element.querySelector('.finder_close').addEventListener('click', ()=>{
         closeFinderWindow('#'+elementId);
-    })
-});
-
-document.querySelectorAll('.windows').forEach(element => {
-    
+    });
 });
