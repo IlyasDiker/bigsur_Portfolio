@@ -4,17 +4,17 @@ I just wanted to create a portfolio that look like an os all the versions i saw 
 
 ### Dev Goals:
 
-[x] MacOs desktop Interface.
-[x] MacOs Dock with apps.
-[x] can have folders, and files on the desktop.
-[x] you can open folders
-[x] you can move folders
-[x] folders can contain files or other folders
-[ ] you can open files Text
-[ ] you can open files Pictures
-[ ] you can open Pdfs
-[ ] create a safari replica using JS
-[ ] maybe other stuff later ...
+- [x] MacOs desktop Interface.
+- [x] MacOs Dock with apps.
+- [x] can have folders, and files on the desktop.
+- [x] you can open folders
+- [x] you can move folders
+- [x] folders can contain files or other folders
+- [ ] you can open files Text
+- [ ] you can open files Pictures
+- [ ] you can open Pdfs
+- [ ] create a safari replica using JS
+- [ ] maybe other stuff later ...
 
 ### Libraries
 
