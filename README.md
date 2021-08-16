@@ -2,6 +2,10 @@
 
 I just wanted to create a portfolio that look like an os all the versions i saw online look like retro windows which i'm not a fan of i wanted to make something that look modern i chose MacOs BigSur as a reference. 
 
+## Preview
+
+[Clich me](https://ilyasdiker.github.io/bigsur_Portfolio/) to see a live preview of the current work.
+
 ### Dev Goals:
 
 - [x] MacOs desktop Interface.
